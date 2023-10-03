@@ -23,5 +23,6 @@ windows:
   - calibration:
     layout: tiled
     panes:
-      - cd /root/bags; mkdir 
-      - 
+      - cd /root/calibration; history -s "rosrun kalibr kalibr_calibrate_cameras --target aprilgrid.yaml --bag dataset_$UAV_NAMESPACE.bag --models pinhole-radtan pinhole-radtan --topics /$UAV_NAMESPACE/camera/image_raw"
+      - cd /root/calibration; history -s "rosrun kalibr kalibr_calibrate_imu_camera --target aprilgrid.yaml --bag dataset_$UAV_NAMESPACE.bag --cam intrinsics.yaml --imu imu.yaml"
+        
